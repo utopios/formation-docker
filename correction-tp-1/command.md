@@ -22,3 +22,6 @@ docker ps -a
 
 ### commande pour supprimer une image 
 docker rmi <nom_ou_id_image>
+
+### Commande pour connecter un conteneur à un réseau
+docker network connect <nom_network> <nom_container>
