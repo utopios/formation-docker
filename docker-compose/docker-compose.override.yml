@@ -1,0 +1,6 @@
+services:
+  web:
+    extends: 
+      file: docker-compose.base.yml
+      service: web
+    command: "echo custom Action from nginx overrided"
