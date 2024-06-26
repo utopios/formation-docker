@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      name: webapp
+  template:
+    metadata:
+      name: webapp
+      labels:
+        name: webapp
+    spec:
+      containers:
+        - name: container-webapp
+          image: webapp
+          imagePullPolicy: Never
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:    
+            - containerPort: 80
