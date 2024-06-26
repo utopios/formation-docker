@@ -8,6 +8,17 @@ spec:
   containers:
   - name: container-nginx
     image: nginx
+    env:
+      - name: USER
+        valueFrom:
+          configMapKeyRef:
+            key: USER
+            name: configmap-name
+      - name: PASSWORD
+        valueFrom:
+          SecretKeyRef:
+            key: PASSWORD
+            name: secret-name
     imagePullPolicy: IfNotPresent
     resources:
       limits:
